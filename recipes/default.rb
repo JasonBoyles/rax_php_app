@@ -1,6 +1,6 @@
 
-# heat string parameters can't be nil; if the field is empty, they are
-# passed as empty strings. php_app expects nils for optional parameters,
+# heat string parameters can't be nil; if the field is empty, they are passed
+# as empty strings. The php_app cookbook expects nils for optional parameters,
 # so here we set those to nil if they are passed as an empty string.
 
 if node[:php_app][:repo] == ""
