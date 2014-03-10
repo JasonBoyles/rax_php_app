@@ -1,5 +1,9 @@
 
 
+if node[:php_app][:deploy_key] == ""
+  node.set[:php_app][:deploy_key] = nil
+end
+
 if node[:php_app][:sslcert] == ""
   node.set[:php_app][:sslcert] = nil
   node.set[:php_app][:sslkey]     = nil
