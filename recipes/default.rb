@@ -3,6 +3,13 @@
 # as empty strings. The php_app cookbook expects nils for optional parameters,
 # so here we set those to nil if they are passed as an empty string.
 
+if node[:php_app][:varnish] == "false"
+  Chef::Log.info("[:php_app][:varnish] is false.")
+  node.set[:php_app][:varnish] = nil
+else
+  Chef::Log.info("[:php_app][:varnish] is not false.")
+end
+
 if node[:php_app][:repo] == ""
   node.set[:php_app][:repo] = nil
 end
