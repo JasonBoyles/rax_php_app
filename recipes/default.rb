@@ -7,7 +7,7 @@ if node[:php_app][:varnish] == "false"
   Chef::Log.info("[:php_app][:varnish] is false.")
   node.set[:php_app][:varnish] = nil
 else
-  Chef::Log.info("[:php_app][:varnish] is not false.")
+  Chef::Log.info("[:php_app][:varnish] is not false, it's #{node[:php_app][:varnish]}")
 end
 
 if node[:php_app][:repo] == ""
